@@ -1,0 +1,100 @@
+.suggest {
+  position: relative;
+  margin-top: var(--s-10);
+  padding-left: 18px;
+  border-left: 1px solid var(--brand);
+}
+
+.legend {
+  display: grid;
+  gap: 8px;
+  font-size: var(--t-2xs);
+  line-height: 1.6;
+  color: var(--fg-3);
+}
+
+.legend b {
+  color: var(--brand-hot);
+  font-weight: 700;
+}
+
+.legendLine {
+  display: flex;
+  align-items: center;
+  width: 160px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--fg-2);
+}
+
+.rule {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(to right, var(--fg-4), var(--green));
+}
+
+.ring {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1.3px var(--fg-4);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--s-6);
+}
+
+.dismiss {
+  min-height: var(--touch);
+  min-width: var(--touch);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--fg-4);
+}
+
+.list {
+  display: grid;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  text-align: left;
+}
+
+.plus {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  font-weight: 700;
+  color: var(--brand);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.title {
+  flex: 1;
+  font-family: var(--font-display);
+  font-size: var(--t-lg);
+  font-weight: 600;
+  color: var(--fg-2);
+}
+
+.interval {
+  font-size: var(--t-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-4);
+}

@@ -1,0 +1,98 @@
+.cluster {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  color: var(--identity);
+}
+
+.cluster:nth-child(4n + 2),
+.cluster:nth-child(4n + 3) {
+  transform: translateY(34px);
+}
+
+.hit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: var(--s-2);
+  border-radius: 40%;
+}
+
+.shape {
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  display: grid;
+  place-items: center;
+}
+
+.shape svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.membrane {
+  fill: color-mix(in srgb, var(--identity) 7%, transparent);
+  stroke: var(--identity);
+  stroke-opacity: 0.4;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.dot {
+  fill: var(--status);
+}
+
+.dot[data-status='stable'],
+.dot[data-status='watch'] {
+  opacity: 0.75;
+}
+
+.emptySymbol {
+  position: relative;
+  color: var(--fg-5);
+}
+
+.ingest {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1.5px var(--identity);
+  pointer-events: none;
+}
+
+.name {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--t-2xs);
+  font-weight: 700;
+  letter-spacing: var(--track-label);
+}
+
+.stats {
+  font-size: var(--t-2xs);
+  letter-spacing: 0.04em;
+  color: var(--fg-4);
+}
+
+.stats b {
+  color: var(--status);
+}
+
+@media (min-width: 768px) {
+  .cluster {
+    width: 25%;
+  }
+  .cluster:nth-child(4n + 2),
+  .cluster:nth-child(4n + 3) {
+    transform: none;
+  }
+  .cluster:nth-child(even) {
+    transform: translateY(40px);
+  }
+}

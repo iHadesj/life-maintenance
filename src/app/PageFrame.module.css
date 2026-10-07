@@ -1,0 +1,52 @@
+.frame {
+  position: absolute;
+  inset: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-500) transparent;
+  background: transparent;
+}
+
+.content {
+  position: relative;
+  min-height: 100%;
+  padding: var(--chrome-top) calc(var(--gutter) + var(--safe-right)) calc(var(--chrome-bottom) + 72px)
+    calc(var(--gutter) + var(--safe-left));
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.pull {
+  position: absolute;
+  top: calc(var(--chrome-top) - 30px);
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: none;
+  color: var(--brand);
+}
+
+.pullArc {
+  width: 18px;
+  height: 18px;
+  transform: rotate(-90deg);
+}
+
+.pullTrack {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1.5;
+}
+
+.pullFill {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}

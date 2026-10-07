@@ -1,0 +1,193 @@
+/*
+ * LIFE/MAINTENANCE — design tokens.
+ * Dracula's palette, pushed onto a deeper substrate so signal colors glow.
+ * Components consume semantic tokens only; raw hues stay in this file.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* ── Ink: the substrate ─────────────────────────────────────────── */
+  --ink-950: #0f1016;
+  --ink-900: #15161d;
+  --ink-850: #1a1b23;
+  --ink-800: #20212b;
+  --ink-750: #262834;
+  --ink-700: #2c2e3b;
+  --ink-600: #343746;
+  --ink-500: #44475a;
+  --ink-400: #565a72;
+  --ink-300: #6272a4;
+
+  /* ── Light ──────────────────────────────────────────────────────── */
+  --fg: #f8f8f2;
+  --fg-2: #d3d4e0;
+  --fg-3: #a2a6c4;
+  --fg-4: #7a87bd; /* muted text, 4.9:1 on --bg */
+  --fg-5: #4f5577; /* decorative only — never text */
+
+  /* ── Signal: raw Dracula accents ────────────────────────────────── */
+  --purple: #bd93f9;
+  --pink: #ff79c6;
+  --cyan: #8be9fd;
+  --green: #50fa7b;
+  --yellow: #f1fa8c;
+  --orange: #ffb86c;
+  --red: #ff5555;
+
+  /* ── Brand ──────────────────────────────────────────────────────── */
+  --brand: var(--purple);
+  --brand-hot: var(--pink);
+  --cursor: var(--pink);
+  --brand-glow: rgba(189, 147, 249, 0.16);
+
+  /* ── Maintenance states ─────────────────────────────────────────── */
+  --state-stable: var(--green);
+  --state-watch: var(--cyan);
+  --state-attention: var(--yellow);
+  --state-due: var(--orange);
+  --state-overdue: var(--pink);
+  --state-critical: var(--red);
+
+  /* ── Category identity: soft hues that never read as state ─────── */
+  --id-violet: #c7a6fa;
+  --id-rose: #f7a1d3;
+  --id-sky: #9fddf0;
+  --id-mint: #97e8b2;
+  --id-sand: #e3dca4;
+  --id-peach: #f5c49a;
+  --id-lilac: #a9b3e6;
+  --id-ash: #c3c5d6;
+
+  /* ── Surfaces & structure ───────────────────────────────────────── */
+  --bg: var(--ink-850);
+  --bg-deep: var(--ink-900);
+  --surface: var(--ink-750);
+  --surface-raised: var(--ink-700);
+  --line: var(--ink-500);
+  --line-soft: rgba(98, 114, 164, 0.3);
+  --line-faint: rgba(98, 114, 164, 0.16);
+  --scrim: rgba(9, 9, 14, 0.68);
+
+  /* ── Type ───────────────────────────────────────────────────────── */
+  --font-mono: 'Martian Mono Variable', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --font-display: 'Syne Variable', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+
+  --t-2xs: 0.625rem; /* 10 */
+  --t-xs: 0.6875rem; /* 11 */
+  --t-sm: 0.78125rem; /* 12.5 */
+  --t-md: 0.875rem; /* 14 */
+  --t-lg: 1.0625rem; /* 17 */
+  --t-xl: 1.375rem; /* 22 */
+  --t-2xl: 1.875rem; /* 30 */
+  --t-3xl: 2.75rem; /* 44 */
+  --t-hero: clamp(5.75rem, 29vw, 9.5rem);
+
+  --track-label: 0.14em;
+  --track-wide: 0.22em;
+  --track-tight: -0.03em;
+
+  /* Martian Mono width axis: technical labels run condensed. */
+  --stretch-condensed: 87.5%;
+  --stretch-normal: 100%;
+  --stretch-wide: 112.5%;
+
+  /* ── Space ──────────────────────────────────────────────────────── */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --gutter: clamp(16px, 5.2vw, 32px);
+  --content-max: 1180px;
+  --touch: 44px;
+
+  /* ── Safe areas & chrome ────────────────────────────────────────── */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --header-h: 52px;
+  --nav-h: 68px;
+  --chrome-top: calc(max(var(--safe-top), 10px) + var(--header-h));
+  --chrome-bottom: calc(var(--safe-bottom) + var(--nav-h));
+
+  /* ── Motion (CSS side; springs live in src/motion) ─────────────── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-organic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-scan: cubic-bezier(0.7, 0, 0.2, 1);
+  --dur-1: 120ms;
+  --dur-2: 220ms;
+  --dur-3: 380ms;
+  --dur-4: 620ms;
+
+  /* ── Layers ─────────────────────────────────────────────────────── */
+  --z-page: 1;
+  --z-header: 20;
+  --z-nav: 30;
+  --z-toast: 40;
+  --z-sheet: 50;
+  --z-palette: 60;
+  --z-hud: 70;
+  --z-boot: 100;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 64px;
+    --nav-h: 0px;
+    --chrome-top: calc(max(var(--safe-top), 12px) + var(--header-h));
+    --chrome-bottom: calc(var(--safe-bottom) + 24px);
+  }
+}
+
+/* ── State → color, usable anywhere through data-status ─────────── */
+[data-status='stable'] {
+  --status: var(--state-stable);
+}
+[data-status='watch'] {
+  --status: var(--state-watch);
+}
+[data-status='attention'] {
+  --status: var(--state-attention);
+}
+[data-status='due'] {
+  --status: var(--state-due);
+}
+[data-status='overdue'] {
+  --status: var(--state-overdue);
+}
+[data-status='critical'] {
+  --status: var(--state-critical);
+}
+
+/* ── Identity → color, usable anywhere through data-identity ────── */
+[data-identity='violet'] {
+  --identity: var(--id-violet);
+}
+[data-identity='rose'] {
+  --identity: var(--id-rose);
+}
+[data-identity='sky'] {
+  --identity: var(--id-sky);
+}
+[data-identity='mint'] {
+  --identity: var(--id-mint);
+}
+[data-identity='sand'] {
+  --identity: var(--id-sand);
+}
+[data-identity='peach'] {
+  --identity: var(--id-peach);
+}
+[data-identity='lilac'] {
+  --identity: var(--id-lilac);
+}
+[data-identity='ash'] {
+  --identity: var(--id-ash);
+}

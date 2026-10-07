@@ -1,0 +1,236 @@
+.section {
+  margin-top: var(--s-10);
+  display: grid;
+  gap: var(--s-3);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--fg-4);
+}
+
+.hash {
+  color: var(--ink-300);
+}
+
+.rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line-faint);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: var(--touch);
+  font-size: var(--t-sm);
+}
+
+.rowLabel {
+  font-size: var(--t-2xs);
+  font-stretch: var(--stretch-condensed);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--fg-4);
+}
+
+.rowValue {
+  min-width: 0;
+  color: var(--fg-2);
+}
+
+.backupLine {
+  display: grid;
+  gap: 6px;
+}
+
+.muted {
+  font-size: var(--t-2xs);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  color: var(--fg-4);
+}
+
+.note {
+  max-width: 52ch;
+  font-size: var(--t-2xs);
+  line-height: 1.7;
+  color: var(--fg-4);
+}
+
+.ok {
+  color: var(--green);
+}
+
+.warnText {
+  color: var(--orange);
+}
+
+.error {
+  font-size: var(--t-xs);
+  color: var(--orange);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+.primary {
+  min-height: 48px;
+  padding: 0 var(--s-6);
+  font-size: var(--t-xs);
+  font-weight: 800;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-900);
+  background: var(--brand);
+  border-radius: 4px 24px 24px 24px;
+}
+
+.primary:disabled {
+  opacity: 0.5;
+}
+
+.ghost {
+  min-height: 48px;
+  padding: 0 var(--s-5);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--fg-2);
+  border-radius: 24px;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.inline {
+  min-height: var(--touch);
+  font-size: var(--t-xs);
+  color: var(--brand);
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+}
+
+.areas {
+  display: grid;
+}
+
+.area {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 52px;
+  color: var(--identity);
+}
+
+.areaName {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  min-height: var(--touch);
+  text-align: left;
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--fg-2);
+}
+
+.areaCount {
+  margin-left: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--fg-4);
+}
+
+.reorder {
+  display: flex;
+}
+
+.reorder button {
+  width: var(--touch);
+  height: var(--touch);
+  color: var(--fg-3);
+}
+
+.reorder button:disabled {
+  opacity: 0.25;
+}
+
+.add {
+  justify-self: start;
+  min-height: var(--touch);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+/* ── import sheet ─────────────────────────────────────────────────── */
+
+.sheetHeading {
+  margin-left: 4px;
+  font-size: var(--t-2xs);
+  font-weight: 700;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.sheetCancel {
+  margin-left: auto;
+  min-height: var(--touch);
+  min-width: var(--touch);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--fg-4);
+}
+
+.importBody {
+  display: grid;
+  gap: var(--s-4);
+  padding-top: var(--s-2);
+}
+
+.fileName {
+  font-family: var(--font-display);
+  font-size: var(--t-lg);
+  font-weight: 700;
+  word-break: break-all;
+}
+
+.kv {
+  display: grid;
+  gap: 4px;
+}
+
+.kv > div {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  gap: var(--s-3);
+  font-size: var(--t-xs);
+}
+
+.kv dt {
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--fg-4);
+}
+
+.kv dd {
+  margin: 0;
+  color: var(--fg-2);
+}

@@ -1,0 +1,68 @@
+.shell {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* Static substrate — painted once, never animated. */
+.backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(70% 40% at 50% 24%, rgba(189, 147, 249, 0.075), rgba(189, 147, 249, 0) 70%),
+    radial-gradient(circle at 1px 1px, rgba(98, 114, 164, 0.24) 1px, rgba(98, 114, 164, 0) 1.4px) 0 0 / 22px 22px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 0.22) 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 0.22) 100%);
+}
+
+.beam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -1px;
+  width: 2px;
+  z-index: 25;
+  background: var(--brand-hot);
+  box-shadow: 0 0 22px 3px rgba(255, 121, 198, 0.45);
+  pointer-events: none;
+}
+
+.sweep {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  z-index: 45;
+  background: linear-gradient(to right, rgba(189, 147, 249, 0), var(--brand) 30%, var(--brand-hot) 70%, rgba(255, 121, 198, 0));
+  box-shadow: 0 0 26px 2px rgba(189, 147, 249, 0.45);
+  pointer-events: none;
+}
+
+.sweepLabel {
+  position: absolute;
+  right: calc(var(--gutter) + var(--safe-right));
+  top: 8px;
+  font-size: var(--t-2xs);
+  font-weight: 700;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--brand);
+  white-space: nowrap;
+}
+
+.focusProxy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  font-size: 16px;
+  pointer-events: none;
+}

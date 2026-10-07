@@ -1,0 +1,88 @@
+.first {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100dvh - var(--chrome-top) - var(--chrome-bottom) - 72px);
+  padding-top: var(--s-4);
+}
+
+.core {
+  position: relative;
+  align-self: flex-end;
+  width: min(62vw, 300px);
+  aspect-ratio: 1;
+  margin: 0 -8% -14% 0;
+}
+
+.brand {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.04em;
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  color: var(--fg);
+}
+
+.motto {
+  margin-top: var(--s-4);
+  font-family: var(--font-display);
+  font-size: var(--t-xl);
+  font-weight: 500;
+  color: var(--fg-3);
+}
+
+.block {
+  margin-top: auto;
+  padding-top: var(--s-10);
+  display: grid;
+  gap: 10px;
+}
+
+.copy {
+  max-width: 30ch;
+  font-size: var(--t-sm);
+  line-height: 1.6;
+  color: var(--fg-3);
+}
+
+.prompt {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: start;
+  min-height: 56px;
+  margin-top: var(--s-2);
+  font-size: var(--t-md);
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.mark {
+  color: var(--brand-hot);
+  font-weight: 800;
+}
+
+.typed {
+  display: inline-block;
+  clip-path: inset(0 0 0 0);
+  animation: first-type 1.4s steps(26, end) 1.4s both;
+}
+
+.hint {
+  margin-top: var(--s-3);
+  font-size: var(--t-2xs);
+  line-height: 1.6;
+  color: var(--fg-4);
+}
+
+@keyframes first-type {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}

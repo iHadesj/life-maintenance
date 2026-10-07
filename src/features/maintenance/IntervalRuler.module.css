@@ -1,0 +1,85 @@
+.ruler {
+  position: relative;
+  height: 56px;
+  overflow: hidden;
+  touch-action: pan-y;
+  cursor: grab;
+  border-radius: 4px;
+}
+
+.ruler:focus-visible {
+  outline-offset: 2px;
+}
+
+.tape {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 1500px;
+  touch-action: pan-y;
+}
+
+.base {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.minor {
+  stroke: var(--fg-5);
+  stroke-width: 1;
+}
+
+.major {
+  stroke: var(--fg-3);
+  stroke-width: 1.4;
+}
+
+.tickLabel {
+  fill: var(--fg-4);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-anchor: middle;
+}
+
+.needle {
+  position: absolute;
+  top: 2px;
+  height: 30px;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--cursor);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.needle::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cursor);
+}
+
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  pointer-events: none;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, var(--surface), rgba(38, 40, 52, 0));
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, var(--surface), rgba(38, 40, 52, 0));
+}

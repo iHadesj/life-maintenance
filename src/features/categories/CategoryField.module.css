@@ -1,0 +1,29 @@
+.field {
+  position: relative;
+  margin-top: var(--s-6);
+}
+
+.spine {
+  position: absolute;
+  left: 0;
+  top: -44px;
+  overflow: visible;
+  fill: none;
+  stroke: var(--identity);
+  stroke-opacity: 0.35;
+  stroke-width: 1;
+  stroke-dasharray: 1 0;
+  pointer-events: none;
+}
+
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.list > li {
+  margin-left: var(--inset-left, 0);
+  margin-right: var(--inset-right, 0);
+}

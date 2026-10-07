@@ -1,0 +1,32 @@
+.head {
+  position: relative;
+  padding-top: var(--s-4);
+}
+
+.kicker {
+  margin-bottom: var(--s-3);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--fg-4);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.06em;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  color: var(--fg);
+}
+
+.line {
+  display: block;
+  line-height: 0.92;
+}
+
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1.2px var(--fg-3);
+}

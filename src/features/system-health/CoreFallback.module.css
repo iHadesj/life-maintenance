@@ -1,0 +1,101 @@
+.core {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.spinSlow {
+  animation: core-spin var(--core-speed, 30s) linear infinite;
+}
+
+.spinReverse {
+  animation: core-spin calc(var(--core-speed, 30s) * 1.6) linear infinite reverse;
+}
+
+.breathe {
+  animation: core-breathe 7s var(--ease-organic) infinite;
+}
+
+.orbitLine {
+  fill: none;
+  stroke: var(--core-rim);
+  stroke-opacity: 0.5;
+  stroke-width: 0.6;
+  stroke-linecap: round;
+}
+
+.fragment {
+  fill: none;
+  stroke: var(--core-rim);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+}
+
+.dashRing {
+  fill: none;
+  stroke: var(--core-inner);
+  stroke-opacity: 0.35;
+  stroke-width: 0.5;
+  stroke-dasharray: 0.6 3.2;
+}
+
+.shell {
+  fill: none;
+  stroke: var(--core-rim);
+  stroke-opacity: 0.4;
+  stroke-width: 0.5;
+}
+
+.body {
+  stroke: var(--core-rim);
+  stroke-opacity: 0.55;
+  stroke-width: 0.5;
+}
+
+.dormant {
+  color: var(--fg-5);
+}
+
+.dormantRing {
+  fill: none;
+  stroke: var(--ink-400);
+  stroke-width: 0.5;
+  stroke-dasharray: 1 3;
+}
+
+.dormantDot {
+  fill: var(--cursor);
+}
+
+.radar {
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(189, 147, 249, 0) 0deg, rgba(189, 147, 249, 0) 300deg, rgba(189, 147, 249, 0.28) 360deg);
+  animation: core-spin 4.2s linear infinite;
+  -webkit-mask: radial-gradient(circle, transparent 0 6%, #000 7%);
+  mask: radial-gradient(circle, transparent 0 6%, #000 7%);
+}
+
+@keyframes core-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes core-breathe {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.035) rotate(6deg);
+  }
+}

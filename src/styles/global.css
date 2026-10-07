@@ -1,0 +1,202 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  line-height: 1.45;
+  overscroll-behavior: none;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+  font-synthesis: none;
+}
+
+#root {
+  position: fixed;
+  inset: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* iOS zooms into inputs smaller than 16px. */
+input,
+textarea {
+  font-size: max(16px, 1em);
+}
+
+a {
+  color: inherit;
+}
+
+svg {
+  display: block;
+  overflow: visible;
+}
+
+::selection {
+  background: rgba(189, 147, 249, 0.35);
+  color: var(--fg);
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 1.5px dashed var(--cyan);
+  outline-offset: 3px;
+}
+
+/* Text fields carry their own focus treatment (underline or inner ring). */
+input[type='text']:focus-visible,
+input[type='search']:focus-visible,
+input:not([type]):focus-visible,
+input[type='number']:focus-visible,
+input[type='date']:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: inset 0 -1.5px 0 var(--brand);
+}
+
+/* ── Primitives ─────────────────────────────────────────────────── */
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--t-2xs);
+  font-weight: 500;
+  font-stretch: var(--stretch-condensed);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--fg-4);
+  line-height: 1.3;
+}
+
+.slash {
+  color: var(--brand-hot);
+}
+
+/*
+ * Display lines fitted to the measure: each line sizes itself from its own
+ * character count (set as --chars), so long and short words both span the
+ * column — Syne's extended capitals never overflow a 375px screen.
+ */
+.fit {
+  --fit-basis: calc(min(100vw, var(--content-max)) - 2 * var(--gutter) - var(--safe-left) - var(--safe-right));
+  font-size: min(var(--fit-max, 6rem), calc(var(--fit-basis) / (var(--chars, 8) * var(--fit-em, 1.17))));
+  white-space: nowrap;
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.56em;
+  height: 1.05em;
+  margin-left: 0.08em;
+  vertical-align: -0.16em;
+  background: var(--cursor);
+  animation: lm-blink 1.06s steps(1, end) infinite;
+}
+
+@keyframes lm-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ── Reduced motion: CSS keyframes and transitions stand still ──── */
+
+@media (prefers-reduced-motion: reduce) {
+  html:not([data-motion='full']) *,
+  html:not([data-motion='full']) *::before,
+  html:not([data-motion='full']) *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0s !important;
+  }
+}
+
+html[data-motion='reduced'] *,
+html[data-motion='reduced'] *::before,
+html[data-motion='reduced'] *::after {
+  animation-duration: 0.001ms !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  transition-delay: 0s !important;
+}

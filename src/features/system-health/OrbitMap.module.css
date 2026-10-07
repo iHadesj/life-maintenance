@@ -1,0 +1,154 @@
+.orbit {
+  position: relative;
+  width: 100%;
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.back,
+.front {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.back {
+  z-index: 0;
+}
+
+.front {
+  z-index: 4;
+}
+
+.pathBack {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1;
+  stroke-dasharray: 2 5;
+  vector-effect: non-scaling-stroke;
+}
+
+.pathFront {
+  fill: none;
+  stroke: var(--ink-400);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.pathOuter {
+  fill: none;
+  stroke: var(--line-faint);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.tether {
+  stroke: var(--status);
+  stroke-width: 1;
+  stroke-opacity: 0;
+  stroke-dasharray: 1 4;
+}
+
+.tether[data-active] {
+  stroke-opacity: 0.55;
+}
+
+.core {
+  position: absolute;
+  z-index: 2;
+}
+
+.satellites {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.satellite {
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+  pointer-events: auto;
+}
+
+.satButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 56px;
+  padding: 4px;
+  color: var(--identity);
+  border-radius: 40%;
+}
+
+.body {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.body svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ringTrack {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.ring {
+  fill: none;
+  stroke: var(--status);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.satellite[data-empty] .satButton {
+  color: var(--fg-4);
+}
+
+.satellite[data-empty] .ringTrack {
+  stroke-dasharray: 2 3;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 9.5px;
+  font-weight: 700;
+  font-stretch: var(--stretch-condensed);
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  color: var(--fg-2);
+}
+
+.satellite[data-empty] .label {
+  color: var(--fg-4);
+}
+
+.badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 4px;
+  font-size: 9px;
+  color: var(--ink-900);
+  background: var(--status);
+  border-radius: 8px;
+}

@@ -1,0 +1,73 @@
+.organism {
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  color: var(--identity);
+}
+
+.svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.membrane {
+  fill: color-mix(in srgb, var(--identity) 11%, transparent);
+  stroke: var(--identity);
+  stroke-opacity: 0.55;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.inner {
+  fill: color-mix(in srgb, var(--identity) 7%, transparent);
+  stroke: var(--identity);
+  stroke-opacity: 0.22;
+  stroke-width: 1;
+  stroke-dasharray: 2 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.alive {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  animation: organism-drift 48s linear infinite;
+}
+
+.track {
+  fill: none;
+  stroke: var(--line-faint);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.health {
+  fill: none;
+  stroke: var(--status);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.symbol {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.organism[data-empty] {
+  color: var(--fg-4);
+}
+
+.organism[data-empty] .membrane {
+  stroke-dasharray: 3 4;
+  fill: transparent;
+}
+
+@keyframes organism-drift {
+  to {
+    transform: rotate(360deg);
+  }
+}

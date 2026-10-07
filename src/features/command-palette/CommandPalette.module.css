@@ -1,0 +1,191 @@
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-palette);
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--scrim);
+}
+
+.panel {
+  position: absolute;
+  top: calc(max(var(--safe-top), 10px) + 6px);
+  left: calc(10px + var(--safe-left));
+  right: calc(10px + var(--safe-right));
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 6px 6px 10px;
+  background: var(--ink-950);
+  border-top: 2px solid var(--brand);
+  border-radius: 4px 4px 26px 26px;
+  outline: none;
+}
+
+.promptRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 4px 0 12px;
+  min-height: 58px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.prompt {
+  flex: none;
+  font-size: var(--t-sm);
+  font-weight: 700;
+  color: var(--fg-2);
+}
+
+.chevron {
+  margin-left: 6px;
+  color: var(--brand-hot);
+}
+
+.inputWrap {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.input {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--fg);
+  caret-color: var(--cursor);
+}
+
+.input::placeholder {
+  color: var(--fg-5);
+}
+
+.ghost {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 500;
+  white-space: pre;
+  overflow: hidden;
+  color: var(--fg-5);
+  pointer-events: none;
+}
+
+.ghostTyped {
+  color: transparent;
+}
+
+.esc {
+  flex: none;
+  min-width: var(--touch);
+  min-height: var(--touch);
+  font-size: var(--t-2xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--fg-4);
+}
+
+.list {
+  max-height: min(52vh, 440px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 6px 0;
+}
+
+.option {
+  display: grid;
+  grid-template-columns: 16px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 12px 0 8px;
+  border-radius: 4px 16px 16px 4px;
+  cursor: pointer;
+  font-size: var(--t-sm);
+  color: var(--fg-3);
+}
+
+.option[aria-selected='true'] {
+  background: var(--ink-800);
+  color: var(--fg);
+}
+
+.caret {
+  color: var(--brand-hot);
+  font-size: var(--t-xs);
+}
+
+.text {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.verb {
+  color: var(--pink);
+}
+
+.match {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.hint {
+  font-size: var(--t-2xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-4);
+  white-space: nowrap;
+}
+
+.option[data-status='attention'] .hint,
+.option[data-status='due'] .hint,
+.option[data-status='overdue'] .hint,
+.option[data-status='critical'] .hint {
+  color: var(--status);
+  font-weight: 700;
+}
+
+.keys {
+  display: none;
+  gap: 10px;
+  padding: 6px 12px 0;
+  font-size: var(--t-2xs);
+  color: var(--fg-4);
+}
+
+.keys kbd {
+  margin-left: 8px;
+  padding: 1px 6px;
+  font-family: var(--font-mono);
+  color: var(--fg-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.keys kbd:first-child {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) and (hover: hover) {
+  .keys {
+    display: block;
+  }
+  .panel {
+    top: 12vh;
+  }
+}

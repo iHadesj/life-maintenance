@@ -1,0 +1,68 @@
+.wrap {
+  position: relative;
+  margin: var(--s-5) 0 var(--s-2);
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 6px;
+}
+
+.labels > span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.labels b {
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.due {
+  color: var(--status) !important;
+}
+
+.track {
+  position: relative;
+}
+
+.handle {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  cursor: grab;
+  touch-action: none;
+}
+
+.grip {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--status);
+  box-shadow:
+    0 0 0 3px var(--surface),
+    0 0 0 9px color-mix(in srgb, var(--status) 22%, transparent);
+}
+
+.hint {
+  margin-top: 4px;
+  font-size: var(--t-2xs);
+  letter-spacing: 0.06em;
+  color: var(--fg-4);
+}
+
+.hint i {
+  font-style: normal;
+  color: var(--status);
+}

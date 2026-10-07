@@ -1,0 +1,63 @@
+.stream {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The conduit: one line every system in the list hangs from. */
+.stream::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 22px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--line) 0%, var(--line) 70%, rgba(68, 71, 90, 0) 100%);
+  pointer-events: none;
+}
+
+.section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 26px 0 4px 34px;
+  font-size: var(--t-2xs);
+  font-weight: 600;
+  font-stretch: var(--stretch-condensed);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  bottom: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1.5px var(--status);
+}
+
+.sectionTitle {
+  color: var(--status);
+}
+
+.sectionRule {
+  flex: 1;
+  height: 1px;
+  background: var(--line-faint);
+}
+
+.sectionCount {
+  color: var(--fg-4);
+}
+
+@media (min-width: 1024px) {
+  .stream {
+    max-width: 760px;
+  }
+}

@@ -1,0 +1,39 @@
+.section {
+  margin-top: var(--s-12);
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--s-2);
+  font-size: var(--t-2xs);
+  font-weight: 700;
+  font-stretch: var(--stretch-condensed);
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+.sectionRule {
+  flex: 1;
+  height: 1px;
+  background: var(--line-faint);
+}
+
+.sectionCount {
+  color: var(--fg-4);
+}
+
+.clear {
+  padding: var(--s-3) 0 var(--s-2) 34px;
+  font-size: var(--t-xs);
+  line-height: 1.6;
+  color: var(--fg-4);
+}
+
+.clusters {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: var(--s-10);
+}

@@ -1,0 +1,88 @@
+.wear {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--status);
+  overflow: visible;
+  pointer-events: none;
+  /* State changes recolor the line while it rewinds, instead of snapping. */
+  transition: color 700ms var(--ease-out);
+}
+
+.wear[data-variant='line'] {
+  max-width: 440px;
+}
+
+.solid {
+  fill: none;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.wear[data-variant='hero'] .solid {
+  stroke-width: 2.6;
+}
+
+.worn {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-opacity: 0.9;
+  vector-effect: non-scaling-stroke;
+}
+
+.wear[data-variant='hero'] .worn {
+  stroke-width: 1.8;
+}
+
+.ahead {
+  fill: none;
+  stroke: var(--fg-5);
+  stroke-width: 1.4;
+  stroke-dasharray: 0.5 5.5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.particles {
+  fill: currentColor;
+}
+
+.origin {
+  fill: var(--fg-2);
+}
+
+.head {
+  fill: currentColor;
+}
+
+.ring {
+  fill: var(--ring-fill, var(--bg));
+  stroke: var(--fg-4);
+  stroke-width: 1.3;
+  stroke-dasharray: 2 2.6;
+  vector-effect: non-scaling-stroke;
+}
+
+.reached {
+  stroke: currentColor;
+  stroke-dasharray: none;
+}
+
+.pulse {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+}
+
+.tick {
+  stroke: var(--fg-5);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
